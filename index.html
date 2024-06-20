@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stock Data</title>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    const socket = io();
+    socket.on('stock data', (data) => {
+      document.getElementById('stock-data').innerText = JSON.stringify(data, null, 2);
+    });
+  </script>
+</head>
+<body>
+  <h1>Live Stock Data</h1>
+  <pre id="stock-data"></pre>
+</body>
+</html>
